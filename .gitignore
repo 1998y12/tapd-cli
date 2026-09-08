@@ -1,0 +1,10 @@
+/target/
+/.tapd-cli.toml
+/.tapd-cli-state/
+/.private/
+/.agents/skills/
+/crates/tapd-domain-km/
+/crates/tapd-cli/src/commands/km.rs
+.DS_Store
+*.swp
+*.tmp

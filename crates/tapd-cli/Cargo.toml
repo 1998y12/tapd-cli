@@ -1,0 +1,43 @@
+[package]
+name = "tapd-cli"
+description = "TAPD Open API command-line client with optional organization workflows"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "tapd-cli"
+path = "src/main.rs"
+
+[features]
+default = ["demo"]
+demo = ["dep:tapd-domain-demo"]
+# Local-only domain integration; uncomment together with its dependency and
+# private CLI integration when producing an internal build.
+# km = ["dep:tapd-domain-km"]
+
+[dependencies]
+anyhow.workspace = true
+clap.workspace = true
+dirs.workspace = true
+hex.workspace = true
+keyring.workspace = true
+pulldown-cmark.workspace = true
+rpassword.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+tapd-client = { path = "../tapd-client" }
+tapd-domain-demo = { path = "../tapd-domain-demo", optional = true }
+# tapd-domain-km = { path = "../tapd-domain-km", optional = true }
+tokio.workspace = true
+toml.workspace = true
+zeroize.workspace = true
+
+[dev-dependencies]
+serde_json.workspace = true
+
+[lints]
+workspace = true

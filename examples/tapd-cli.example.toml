@@ -1,0 +1,21 @@
+default_profile = "demo"
+
+[profiles.demo]
+api_base_url = "https://api.tapd.cn"
+web_base_url = "https://www.tapd.cn"
+workspace_id = ""
+# CI or temporary override. Interactive login stores the token in the system
+# credential store under service tapd-cli and account demo.
+token_env = "TAPD_ACCESS_TOKEN"
+timeout_seconds = 30
+
+# Organization-domain configuration is parsed by tapd-domain-demo rather than
+# the reusable HTTP client. Replace these values in a private extension.
+[organizations.demo.request]
+profile = "demo"
+# workspace_id may be omitted to inherit profiles.demo.workspace_id.
+workspace_id = ""
+workitem_type_id = ""
+category_id = ""
+owner = ""
+title_template = "[{subject}] {summary}"

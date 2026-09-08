@@ -1,0 +1,15 @@
+default_profile = "local"
+
+[profiles.local]
+api_base_url = "http://127.0.0.1:9"
+web_base_url = "https://www.tapd.cn"
+workspace_id = "37916943"
+token_env = "TAPD_CLI_TEST_TOKEN"
+timeout_seconds = 1
+
+[organizations.demo.request]
+profile = "local"
+workitem_type_id = "42"
+category_id = "7"
+owner = ""
+title_template = "[{subject}] {summary}"
